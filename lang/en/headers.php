@@ -1,0 +1,28 @@
+<?php
+return [
+    'user' => 'User',
+    'users' => 'Users',
+    'role' => 'Role',
+    'roles' => 'Roles',
+    "female" => "Female",
+    "male" => "Male",
+    "teacher" => "Teacher",
+    "student" => "Student",
+    "students" => "Students",
+    "supervisor" => "Supervisor",
+    "admin" => "Admin",
+    "course"=>"Course",
+    "courses"=>"Courses",
+    "category"=>"Category",
+    "categories"=>"Categories",
+    "lang"=>"language",
+    "langs"=>"languages",
+    "study"=>"Study",
+    "studies"=>"Studies",
+    "setting"=>"Setting",
+    "tasks"=>"Tasks",
+    "task"=>"Task",
+    "answers" => "Answers",
+    "answer" => "Answer",
+
+];

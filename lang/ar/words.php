@@ -1,0 +1,33 @@
+<?php
+return [
+
+    "email" => " البريد الالكتروني",
+    "password" => "كلمة السر",
+    "profile_image" => "صوره الملف الشخصي",
+    "name" => "الاسم",
+    "phone" => "رقم الهاتف",
+    "address" => "العنوان",
+    "gender" => "الجنس ",
+    "user_type" => "نوع المستخدم",
+    "show_password" => "اظهار كلمه السر ",
+    "password_confirmation" => "تأكيد كلمة المرور",
+    "description" => "الشرح ",
+    "title" => "العنوان",
+    "price" => "السعر",
+    "duration" => "المده",
+    "image" => "الصوره",
+
+    "attach_student" => "ارفاق طالب ",
+    "detach_student" => "فصل طالب",
+    "attach_course" => "ارفاق كورس",
+    "detach_course" => "فصل كورس",
+    "permissions" => "صلاحيات الدور",
+    "category" => "الفئة",
+    "status" => "الحالة",
+    "start_date" => "تاريخ البداية",
+    "end_date" => "تاريخ النهاية",
+    "date" => "التاريخ",
+    "files" => "ملفات ",
+    "video" => "فيديو",
+    "presence" => "الحظور",
+];
