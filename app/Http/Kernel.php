@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\LangApiMiddleware;
 use App\Http\Middleware\SetLocaleArray;
 use App\Http\Middleware\SetLocaleArrayMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -42,6 +43,7 @@ class Kernel extends HttpKernel
          ],
 
         'api' => [
+            LangApiMiddleware::class,
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
