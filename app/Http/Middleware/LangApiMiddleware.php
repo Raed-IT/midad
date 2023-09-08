@@ -11,6 +11,9 @@ class LangApiMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
+        if ($request->route()->uri == "api/auth/login" || $request->route()->uri == "api/auth/register") {
+            return $next($request);
+        }
         if (in_array($request->get("local"), Lang::all()->pluck("code")->toArray())) {
             app()->setLocale($request->get("local"));
         } else {
@@ -21,6 +24,8 @@ class LangApiMiddleware
                 ]
             );
         }
+
+
         return $next($request);
     }
 }
