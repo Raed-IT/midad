@@ -61,7 +61,7 @@ class CategoryResource extends Resource
                                 return $items;
                             }
                         ),
-                    Forms\Components\TextInput::make("is_active")->required()->label(__("words.status")),
+                    Forms\Components\Toggle::make("is_active")->required()->label(__("words.status")),
                 ])
             ]);
     }

@@ -16,9 +16,9 @@ class CategoryResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "name" => $this->name,
+            "name" => $this->getTranslations('name'),
             "is_active" => $this->is_active,
-            "created_at"=>$this->created_at
+            "created_at" => $this->created_at
         ];
     }
 }

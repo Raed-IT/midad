@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traite\HasImageTraite;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,7 +14,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Course extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, HasTranslations;
+    use HasFactory, InteractsWithMedia, HasTranslations ,HasImageTraite;
 
     protected $guarded = [];
     public $translatable = ['title', "description"];
@@ -28,6 +29,7 @@ class Course extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class);
     }
+
 
     public function studies(): HasMany
     {
