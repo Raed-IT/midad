@@ -26,9 +26,9 @@ trait HasImageTraite
     public function getFilesAttribute(): array
     {
         $files = [];
-        if ($this->hasMedia('files')) {
-            foreach ($this->getMedia("files") as $file) {
-                $files[] = $file->getFullUrl();
+        if ($this->hasMedia()) {
+            foreach ($this->getMedia() as $file) {
+                $files[] = $file->getUrl();
             }
         }
         return $files;

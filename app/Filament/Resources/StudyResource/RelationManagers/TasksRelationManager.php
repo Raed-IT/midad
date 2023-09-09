@@ -45,6 +45,7 @@ class TasksRelationManager extends RelationManager
                                 return $items;
                             }
                         ),
+                    Forms\Components\Select::make('user_id')->relationship("user","name")->label(__("headers.user")),
                     SpatieMediaLibraryFileUpload::make('image')->collection('image')->label(__("words.files")),
                     SpatieMediaLibraryFileUpload::make('video')->collection('video')->label(__("words.video")),
 
@@ -55,8 +56,9 @@ class TasksRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('info')
+            ->recordTitleAttribute('user.name')
             ->columns([
+                 Tables\Columns\TextColumn::make('user.name')->label(__("headers.user")),
                  Tables\Columns\TextColumn::make('info')->label(__("words.description")),
                 Tables\Columns\TextColumn::make('created_at')->label(__("words.date")),
             ])

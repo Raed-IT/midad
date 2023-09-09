@@ -74,9 +74,9 @@ class StudyResource extends Resource
                         ->preload()->label(__('headers.teacher')),
                     Forms\Components\DateTimePicker::make("start_at")->required()->label(__("words.start_date")),
                     Forms\Components\DateTimePicker::make("end_at")->required()->label(__("words.end_date")),
-                    SpatieMediaLibraryFileUpload::make('image')->label(__("words.files"))->multiple(),
+                    SpatieMediaLibraryFileUpload::make('files')->label(__("words.files"))->multiple(),
                     SpatieMediaLibraryFileUpload::make('video')->collection('video')
-                        ->acceptedFileTypes(["application/video"])
+                        ->acceptedFileTypes(["video/mp4", "application/x-mpegUR", "video/MP2T", "video/3gpp", "video/quicktime", "video/x-msvideo", "video/x-ms-wmv"])
                         ->label(__("words.video")),
                 ])
             ]);

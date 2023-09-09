@@ -18,6 +18,8 @@ class StudyResource extends JsonResource
             "id" => $this->id,
             "title" => $this->getTranslations("title"),
             "description" => $this->getTranslations("description"),
+            "files"=>$this->files,
+            "video"=>$this->video,
             "teacher" => $this->user?->name,
             "course" => $this->course?->title,
             'start_at'=>$this->start_at,
