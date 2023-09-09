@@ -16,8 +16,8 @@ class CourseResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "title" => $this->getTranslations('title'),
-            "description" => $this->getTranslations('description'),
+            "title" => $this->title,
+            "description" => $this->description,
             "image"=>$this->image,
             "category" => $this->category?->name,
             "duration" => $this->duration,

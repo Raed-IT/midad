@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateAnswerRequest;
 use App\Http\Requests\GetAnswersRequest;
+use App\Http\Resources\AnswerResource;
 use App\Http\Resources\CourseResource;
 use App\Http\Resources\PaginationResource;
 use App\Models\Answer;
@@ -22,20 +24,31 @@ class AnswerController extends Controller
             "answers" => function ($q) {
                 $q->whereUserId(auth()->id());
             }
-        ])->find($request->task_id)->answers()->cursorPaginate();
+        ])->find($request->task_id)->answers;
         return \response()->json([
             "status" => "success",
-            "answers" => CourseResource::collection($answers),
-            "pagination" => new PaginationResource($answers)
+            "answers" => AnswerResource::collection($answers),
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateAnswerRequest $request)
     {
-        //
+        $answer = Answer::create([
+            "task_id" => $request->get("task_id"),
+            "user_id" => auth()->id(),
+            "info" => $request->get("info"),
+        ]);
+        if ($request->image) {
+            $answer->clearMediaCollection("image");
+            $answer->addMediaToModel($request->image);
+        }
+        return response()->json([
+            "status" => "success",
+            "answer" => new AnswerResource($answer),
+        ]);
     }
 
     /**
