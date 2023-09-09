@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GetCourseRequest;
+use App\Http\Resources\PaginationResource;
 use App\Http\Resources\StudyResource;
 use App\Models\Course;
 use App\Models\Study;
@@ -16,10 +17,11 @@ class StudyController extends Controller
      */
     public function index(GetCourseRequest $request)
     {
-        $studies = Course::with(["studies.tasks"])->find($request->course_id)->studies;
+        $studies = Course::with(["studies.tasks"])->find($request->course_id)->studies()->cursorPaginate();
         return response()->json([
             "status" => "success",
             "studies" => StudyResource::collection($studies),
+            "pagination"=> new PaginationResource($studies)
         ]);
     }
 

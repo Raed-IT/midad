@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CourseResource;
+use App\Http\Resources\PaginationResource;
 use App\Models\Course;
 use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
@@ -17,10 +18,11 @@ class CourseController extends Controller
     {
         $courses = Course::whereHas("users",
             fn($q) => $q->whereUserId(auth()->user()->id)
-        )->get();
+        )->cursorPaginate();
         return \response()->json([
             "status" => "success",
-            "courses" => CourseResource::collection($courses)
+            "courses" => CourseResource::collection($courses),
+            "pagination"=>new PaginationResource($courses)
         ]);
     }
 
