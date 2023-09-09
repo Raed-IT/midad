@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
-class GetCourseRequest extends BaseRequest
+class GetAnswersRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +22,7 @@ class GetCourseRequest extends BaseRequest
     public function rules(): array
     {
         return [
-            "course_id" => "required|exists:courses,id",
+            'study_id' => "required|exists:studies,id",
         ];
     }
-
 }

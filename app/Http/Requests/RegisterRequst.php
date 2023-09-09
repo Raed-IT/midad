@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class RegisterRequst extends FormRequest
+class RegisterRequst extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,10 +30,5 @@ class RegisterRequst extends FormRequest
         ];
     }
 
-    public function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(
-            response()->json(['status' => "error", "msg" => $validator->errors()->first()])
-        );
-    }
+
 }

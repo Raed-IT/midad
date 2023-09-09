@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
-
-use App\Models\Lang;
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Exceptions\HttpResponseException;
+ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class CreateCategoryRequest extends FormRequest
+class CreateCategoryRequest extends BaseRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,10 +28,5 @@ class CreateCategoryRequest extends FormRequest
         ];
     }
 
-    public function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(
-            response()->json(['status' => "error", "msg" => $validator->errors()->first()])
-        );
-    }
+
 }
