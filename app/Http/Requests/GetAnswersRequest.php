@@ -22,7 +22,7 @@ class GetAnswersRequest extends BaseRequest
     public function rules(): array
     {
         return [
-            'study_id' => "required|exists:studies,id",
+            'task_id' => "required|exists:tasks,id",
         ];
     }
 }
