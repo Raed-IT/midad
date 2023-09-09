@@ -24,7 +24,7 @@ class StudyResource extends JsonResource
             "course" => $this->course?->title,
             'start_at'=>$this->start_at,
             'end_at'=>$this->end_at,
-
+            "tasks"=>TaskResource::collection($this->tasks),
         ];
     }
 }

@@ -22,5 +22,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('/categories', \App\Http\Controllers\Api\CategoryController::class)->only("index");
     Route::resource('/courses', \App\Http\Controllers\Api\CourseController::class)->only("index");
     Route::resource('/studies', \App\Http\Controllers\Api\StudyController::class)->only("index");
+    Route::resource('/tasks', \App\Http\Controllers\Api\Ta::class)->only("index");
 });
 

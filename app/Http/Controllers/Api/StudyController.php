@@ -16,7 +16,7 @@ class StudyController extends Controller
      */
     public function index(GetCourseRequest $request)
     {
-        $studies = Course::with("studies")->find($request->course_id)->studies;
+        $studies = Course::with(["studies.tasks"])->find($request->course_id)->studies;
         return response()->json([
             "status" => "success",
             "studies" => StudyResource::collection($studies),
