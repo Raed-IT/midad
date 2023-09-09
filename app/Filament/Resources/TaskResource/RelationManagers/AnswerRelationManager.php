@@ -33,7 +33,7 @@ class AnswerRelationManager extends RelationManager
                     Forms\Components\Select::make("user_id")
                         ->relationship("user", "name")->label(__('headers.user'))->required(),
                     Forms\Components\Textarea::make("info")->label(__('words.description')),
-                    Forms\Components\SpatieMediaLibraryFileUpload::make("files")->label(__("words.files"))
+                    Forms\Components\SpatieMediaLibraryFileUpload::make("files")->downloadable()->collection("image")->label(__("words.files"))
                 ])
             ]);
     }

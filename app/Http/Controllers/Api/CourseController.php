@@ -16,6 +16,16 @@ class CourseController extends Controller
      */
     public function index()
     {
+        $courses = Course::cursorPaginate();
+        return \response()->json([
+            "status" => "success",
+            "courses" => CourseResource::collection($courses),
+            "pagination"=>new PaginationResource($courses)
+        ]);
+    }
+
+    public function myCourses()
+    {
         $courses = Course::whereHas("users",
             fn($q) => $q->whereUserId(auth()->user()->id)
         )->cursorPaginate();
@@ -26,9 +36,6 @@ class CourseController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //
