@@ -7,8 +7,6 @@ use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 
 trait HasImageTraite
 {
-
-
     public function getImageAttribute()
     {
         if ($this->hasMedia('image')) {
@@ -17,7 +15,15 @@ trait HasImageTraite
         return asset('images/default.png');
     }
 
-    public function getFilesAttribute()
+    public function getVideoAttribute()
+    {
+        if ($this->hasMedia('video')) {
+            return $this->getFirstMediaUrl("video");
+        }
+        return null;
+    }
+
+    public function getFilesAttribute(): array
     {
         $files = [];
         if ($this->hasMedia('files')) {
@@ -28,7 +34,7 @@ trait HasImageTraite
         return $files;
     }
 
-    public function addMediaToModel($images, string $collection = "image")
+    public function addMediaToModel($images, string $collection = "image"): void
     {
         if (is_array($images)) {
             //  images is array store all items
@@ -56,15 +62,5 @@ trait HasImageTraite
 
     }
 
-    public function getSliders()
-    {
-        $images = [];
-        if ($this->hasMedia('slider')) {
-            $list = $this->getMedia('slider');
-            foreach ($list as $kye => $item) {
-                $images[] = $item->getUrl();
-            }
-        }
-        return $images;
-    }
+
 }
