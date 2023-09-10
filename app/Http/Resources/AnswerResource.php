@@ -17,6 +17,7 @@ class AnswerResource extends JsonResource
         return [
             "id" => $this->id,
             "task" => $this->task?->info,
+            "task_id" =>$this->task_id,
             "user" => $this->user?->name,
             "info" => $this->info,
             "image"=>$this->image,

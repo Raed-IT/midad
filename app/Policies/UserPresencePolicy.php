@@ -3,25 +3,25 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\Response;
-use App\Models\Session;
+use App\Models\UserPresence;
 use App\Models\User;
 
-class sessionPolicy
+class UserPresencePolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view-any session');
+        return $user->can('view-any UserPresence');
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Session $session): bool
+    public function view(User $user, UserPresence $userpresence): bool
     {
-        return $user->can('view session');
+        return $user->can('view UserPresence');
     }
 
     /**
@@ -29,38 +29,38 @@ class sessionPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create session');
+        return $user->can('create UserPresence');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Session $session): bool
+    public function update(User $user, UserPresence $userpresence): bool
     {
-        return $user->can('update session');
+        return $user->can('update UserPresence');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Session $session): bool
+    public function delete(User $user, UserPresence $userpresence): bool
     {
-        return $user->can('delete session');
+        return $user->can('delete UserPresence');
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Session $session): bool
+    public function restore(User $user, UserPresence $userpresence): bool
     {
-        return $user->can('restore session');
+        return $user->can('restore UserPresence');
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Session $session): bool
+    public function forceDelete(User $user, UserPresence $userpresence): bool
     {
-        return $user->can('force-delete session');
+        return $user->can('force-delete UserPresence');
     }
 }
