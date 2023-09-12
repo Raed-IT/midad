@@ -25,12 +25,6 @@ class IndexController extends Controller
         return view('pages.course',compact('courses'));
     }
 
-    public function showCats(){
-        $courses = Category::all();
-        return view('pages.cats',compact('courses'));
-    }
-
-
     public function login(){
 
         return view('pages.login');
@@ -47,12 +41,4 @@ class IndexController extends Controller
             session()->put('lang', $lang);
         }
 
-
-}
-
-public function profile(){
-
-        return view('pages.profile');
-}
-
-}
+}}

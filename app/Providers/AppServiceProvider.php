@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Lang;
 use App\Models\Study;
- use App\Observers\StudyObserve;
+use App\Observers\StudyObserve;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        \View::share([
+            "langs" => Lang::whereIsActive(true)->get(),
+        ]);
         Study::observe(StudyObserve::class);
     }
 }
