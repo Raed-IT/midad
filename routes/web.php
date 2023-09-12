@@ -3,7 +3,8 @@
 use App\Enums\GenderEnum;
 use App\Enums\UserTypeEnum;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/languages/{lang}', [IndexController::class, 'change_lang'])->name('change.lang');
 
-Route::get('/', function () {
+Route::get('/',[IndexController::class,'index'])->name('index_page');
+Route::get('/courses',[IndexController::class,'showCourses'])->name('show_courses');
+Route::get('/course/{data}',[CourseController::class,'show'])->name('course_details');
+Route::get('/login',[IndexController::class,'login'])->name('login');
+Route::get('/register',[IndexController::class,'register'])->name('register');
+Route::get('/profile',[]);
 
-//    dd(\App\Models\Lang::all()->map(function ($lang) {})->toArray());
-    //    return view('welcome');
-});

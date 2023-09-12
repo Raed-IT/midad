@@ -1,0 +1,86 @@
+body {
+  background: linear-gradient(90deg, rgba(252, 250, 175, 1) 0%, rgba(253, 238, 225, 1) 0%, rgba(252, 250, 255, 1) 100%);
+}
+
+.nav-bar {
+  background: linear-gradient(90deg, rgba(252, 250, 175, 1) 0%, rgba(253, 238, 225, 1) 0%, rgba(252, 250, 255, 1) 100%);
+}
+
+.btn-nav-bar {
+  background-color: #ff3544;
+}
+
+body {
+}
+
+.links {
+  font-size: 17px;
+  font-weight: 500;
+  color: #27364b;
+}
+
+.hero-slider {
+  box-shadow: 16px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.slider-img {
+  height: 300px;
+  width: initial;
+  object-fit: cover;
+}
+
+.text-heder-slider {
+  font-size: 25px;
+  color: #27364b;
+}
+
+.btn-slider {
+  font-size: 20px;
+  background-color: #ff3544;
+  text-decoration: none;
+  color: #fcfaff;
+  border: none;
+  padding: 8px;
+}
+
+.statics-div {
+  padding: 12px;
+  background-color: rgba(255,255,255,0.5);
+  box-shadow: 16px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.statics-head {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.statics-info {
+  font-size: 20px;
+}
+
+.course-icon {
+  font-size: 60px;
+  color: #ff3544;
+}
+
+.course-cat {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cat-number {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.cat-div {
+  padding: 10px;
+  background-color: #fcfaff;
+  transition: 1s ease;
+  box-shadow: 16px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.cat-div:hover {
+  transform: scale(1.1);
+}
+
