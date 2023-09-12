@@ -20,25 +20,32 @@ class IndexController extends Controller
 
     }
 
-    public function showCourses(){
+    public function showCourses()
+    {
         $courses = Course::all();
-        return view('pages.course',compact('courses'));
+        return view('pages.course', compact('courses'));
     }
 
-    public function login(){
+    public function login()
+    {
 
         return view('pages.login');
     }
 
-    public function register(){
+    public function register()
+    {
 
         return view('pages.register');
     }
 
-    public function change_lang($lang){
-        if(in_array($lang,['ar','en'])) {
+    public function change_lang($lang)
+    {
+        if (in_array($lang, ['ar', 'en'])) {
             session()->forget('lang');
             session()->put('lang', $lang);
+            return redirect()->back();
+
         }
 
-}}
+    }
+}
