@@ -22,5 +22,5 @@ Route::get('/courses',[IndexController::class,'showCourses'])->name('show_course
 Route::get('/course/{data}',[CourseController::class,'show'])->name('course_details');
 Route::get('/login',[IndexController::class,'login'])->name('login');
 Route::get('/register',[IndexController::class,'register'])->name('register');
-Route::get('/profile',[]);
+Route::get('/profile/{data}',[IndexController::class,'profile'])->name('profile');
 

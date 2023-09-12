@@ -41,4 +41,12 @@ class IndexController extends Controller
             session()->put('lang', $lang);
         }
 
-}}
+
+}
+
+public function profile(){
+
+        return view('pages.profile');
+}
+
+}
