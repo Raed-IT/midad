@@ -33,6 +33,7 @@ return [
     "end_date" => "End Date ",
     "more"=>"More",
     "All_Courses"=>"All Courses",
+    "All_Cats"=>"All Categories",
     "date" => " Date ",
     "files" => "Files",
     "video" => "Video ",

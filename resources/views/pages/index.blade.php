@@ -63,7 +63,7 @@
                 <div class="col">
                     <p class="mb-0 statics-head">{{__('words.categories')}}</p>
                 </div>
-                <div class="col text-end"><a class="btn btn-primary btn-slider" role="button" href="courses.html">{{__('words.Browse_All')}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-right">
+                <div class="col text-end"><a class="btn btn-primary btn-slider" role="button" href="{{route('show_cats')}}">{{__('words.Browse_All')}}&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-caret-right">
                             <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"></path>
                         </svg></a></div>
             </div>
@@ -112,6 +112,9 @@
                     <ul class="cards">
                         @foreach($courses as $course)
                         <li class="cards_item">
+                            <a href="{{route('course_details',$course)}}">
+
+
                             <div class="card">
                                 <div class="card_image mt-5"><img src="{{$course->image}}" alt="mixed vegetable salad in a mason jar" width="376" height="auto" max-width="376" style="margin-top: -25px;margin-left: 24px;"></div>
                                 <div class="card_content">
@@ -122,6 +125,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </li>
                         @endforeach
 

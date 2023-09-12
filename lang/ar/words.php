@@ -14,6 +14,7 @@ return [
     "description" => "الشرح ",
     "title" => "العنوان",
     "price" => "السعر",
+    "All_Cats" => "جميع الفئات",
     "All_Courses"=>"جميع الكورسات",
     "more"=>"تصفح الدورة",
     "duration" => "المده",

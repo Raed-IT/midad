@@ -19,6 +19,7 @@ Route::get('/languages/{lang}', [IndexController::class, 'change_lang'])->name('
 
 Route::get('/',[IndexController::class,'index'])->name('index_page');
 Route::get('/courses',[IndexController::class,'showCourses'])->name('show_courses');
+Route::get('/cats',[IndexController::class,'showCats'])->name('show_cats');
 Route::get('/course/{data}',[CourseController::class,'show'])->name('course_details');
 Route::get('/login',[IndexController::class,'login'])->name('login');
 Route::get('/register',[IndexController::class,'register'])->name('register');
